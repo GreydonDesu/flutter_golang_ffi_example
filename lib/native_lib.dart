@@ -9,8 +9,10 @@ import 'generated_bindings.dart';
 /// They will block the Dart execution while running the native function, so
 /// only do this for native functions which are guaranteed to be short-lived.
 int sum(int a, int b) => _bindings.sum(a, b);
+int yesterday(int c) => _bindings.yesterday(c);
+int current() => _bindings.current();
 
-const String _libName = 'native_add';
+const String _libName = 'native_lib';
 
 /// The dynamic library in which the symbols for [NativeAddBindings] can be found.
 final DynamicLibrary _dylib = () {
@@ -18,7 +20,7 @@ final DynamicLibrary _dylib = () {
     return DynamicLibrary.open('$_libName.framework/$_libName');
   }
   if (Platform.isAndroid || Platform.isLinux) {
-    return DynamicLibrary.open('libsum.so');
+    return DynamicLibrary.open('libnative.so');
   }
   if (Platform.isWindows) {
     return DynamicLibrary.open('$_libName.dll');

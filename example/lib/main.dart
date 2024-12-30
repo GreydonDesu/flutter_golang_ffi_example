@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:native_add/native_add.dart' as native_add;
+import 'package:native_add/native_lib.dart' as native_lib;
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +13,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late int sumResult;
+  late int flutterTime;
+  late int golangTime;
 
   @override
   void initState() {
     super.initState();
-    sumResult = native_add.sum(1, 2);
+    flutterTime = DateTime.now().millisecondsSinceEpoch;
+    golangTime = native_lib.current() * 1000;
   }
 
   @override
@@ -43,7 +45,12 @@ class _MyAppState extends State<MyApp> {
                 ),
                 spacerSmall,
                 Text(
-                  'sum(1, 2) = $sumResult',
+                  'Flutter = $flutterTime',
+                  style: textStyle,
+                  textAlign: TextAlign.center,
+                ),
+                Text(
+                  'Golang = $golangTime',
                   style: textStyle,
                   textAlign: TextAlign.center,
                 ),

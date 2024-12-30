@@ -75,6 +75,8 @@ extern "C" {
 #endif
 
 extern int sum(int a, int b);
+extern int yesterday(int c);
+extern int current();
 extern void enforce_binding();
 
 #ifdef __cplusplus
