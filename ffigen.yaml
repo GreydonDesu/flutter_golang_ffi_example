@@ -14,5 +14,6 @@ preamble: |
 comments:
   style: any
   length: full
+# Bitte hier auf die Pfade der Toolchain achten!
 llvm-path:
-  - '/usr/local/android-sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin'
+  - '/usr/local/android-sdk/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin'

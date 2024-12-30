@@ -1,6 +1,7 @@
 ANDROID_OUT=../android/src/main/jniLibs
+# Bitte hier auf die Pfade der Toolchain achten!
 ANDROID_SDK=/usr/local/android-sdk
-NDK_BIN=$(ANDROID_SDK)/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin
+NDK_BIN=$(ANDROID_SDK)/ndk/27.2.12479018/toolchains/llvm/prebuilt/linux-x86_64/bin
 LIB_NAME=libnative
 
 android-armv7a:
